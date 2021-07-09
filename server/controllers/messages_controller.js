@@ -2,12 +2,10 @@ const messages = [];
 
 let id = 0;
 
-readMessages = (req, res) => {
-   res.status(200).json(messages);
-},
-
 module.exports = {
-   readMessages,
+   readMessages: (req, res) => {
+      res.status(200).json(messages);
+   },
    createMessages: (req, res) => {
       const { time, text } = req.body;
 
